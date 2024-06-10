@@ -7,16 +7,15 @@ import sqlite3
 from datetime import datetime
 
 
-churro = "sqlite:///mpgdb.db"
+# churro = "sqlite:///mpgdb.db"
 # engine = create_engine(churro)
 
-
-# churro = "postgresql://postgres:postgresql@104.155.61.55/postgres"
+churro = "postgresql://postgres:postgresql@104.155.61.55/postgres"
 engine = create_engine(churro)
 
 
 
-with open("model.pkl", "rb") as f:
+with open(".\model.pkl", "rb") as f:
     saved_model = pickle.load(f)
 
 app = Flask(__name__)
